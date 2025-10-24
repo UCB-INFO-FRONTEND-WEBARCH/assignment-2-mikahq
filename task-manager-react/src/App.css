@@ -1,0 +1,26 @@
+/* This is your CSS files */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: black;
+}
+
+
+/* ========== RESPONSIVE STYLES ========== */
+
+@media (max-width: 480px) {
+  .left-nav,
+  .left-nav-hover,
+  .left-nav-hover:hover {
+    display: none;
+  }
+}

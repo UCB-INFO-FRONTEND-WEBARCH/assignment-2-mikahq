@@ -1,0 +1,73 @@
+/* ========== HEADER STYLES ========== */
+
+.site-header {
+  padding: 10px;
+
+  display: flex;
+  background: #dc4c3e;
+  color: #ffffff;
+  justify-content: space-between;
+}
+
+.site-header__status {
+  margin-left: auto;
+}
+
+.menu-search {
+  display: flex;
+  align-items: center;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  /* display: flex; */
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* ========== NAVIGATION STYLES ========== */
+.left-nav {
+  /* from w3 schools */
+
+  background-color: #fefbf2;
+}
+
+.left-nav-hover {
+  padding: 1px;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.left-nav-hover:hover {
+  background-color: rgb(255, 255, 255);
+  padding: 1px;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.count {
+  color: #7e7d79;
+  font-size: 12px;
+  padding: 4px;
+}
+
+/* ========== li styles ========== */
+li {
+  list-style-type: none;
+}
+
+.page-li {
+  display: flex;
+  border-bottom: 1px solid rgb(178, 176, 176);
+  padding: 2px 2px;
+  margin: 12px;
+  /* width: 90vh; */
+}

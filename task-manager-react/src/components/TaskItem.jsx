@@ -3,7 +3,7 @@ function TaskItem() {
   setTasks([...tasks, newTask]);
 
   function addTask(name) {
-    const newTask = { id: Date.now(), name, quantity: 1 };
+    const newTask = { id: Date.now(), name, quantity: 1, completed: false };
     setTasks([...tasks, newTask]); // Spread existing, add new
   }
 
@@ -17,14 +17,11 @@ function TaskItem() {
     ); // Map to new array with updates
   }
 
-
-  return (
-      <li> {new Date.now()} Item</li>
-  );
+  return <li> {new Date.now()} Item</li>;
 }
 
 // - `id` - Unique identifier (Hint: `Date.now()` or `crypto.randomUUID()`)
 // - `text` - The task description (string)
 // - `completed` - Boolean for completion status
 
-export default TaskItem
+export default TaskItem;

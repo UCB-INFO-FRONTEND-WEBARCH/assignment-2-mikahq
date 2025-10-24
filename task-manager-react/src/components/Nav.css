@@ -1,0 +1,37 @@
+/* ========== NAVIGATION STYLES ========== */
+.left-nav {
+  /* from w3 schools */
+
+  background-color: #fefbf2;
+}
+
+.left-nav-hover {
+  padding: 1px;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.left-nav-hover:hover {
+  background-color: rgb(255, 255, 255);
+  padding: 1px;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.count {
+  color: #7e7d79;
+  font-size: 12px;
+  padding: 4px;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+@media (max-width: 480px) {
+  .left-nav,
+  .left-nav-hover,
+  .left-nav-hover:hover {
+    display: none;
+  }
+}

@@ -1,8 +1,8 @@
 // import { useState } from "react";
-import "./index.css";
-import Header from "./Header.jsx";
-import Nav from "./Nav.jsx";
-import List from "./List.jsx";
+import "./App.css";
+import Header from "./components/Header.jsx";
+import Nav from "./components/Nav.jsx";
+import List from "./components/List.jsx";
 import TaskList from "./components/TaskList";
 
 // import TaskItem from "./components/TaskItem";
@@ -12,8 +12,11 @@ function App() {
   return (
     <>
       <Header />
-      <Nav />
-      <TaskList />
+      <main className="site-main">
+        <Nav />
+        <List />
+        <TaskList />
+      </main>
     </>
   );
 }
