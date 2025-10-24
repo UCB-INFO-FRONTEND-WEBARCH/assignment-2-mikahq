@@ -1,36 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from "react";
+import "./index.css";
+import Header from "./Header.jsx";
+import Nav from "./Nav.jsx";
+import List from "./List.jsx";
+import TaskList from "./components/TaskList";
+
+// import TaskItem from "./components/TaskItem";
+// import TaskForm from "./components/TaskForm";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const[id, text, completed] = []
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <Nav />
+      <TaskList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
+// Unused code
+
+//const [count, setCount] = useState([]);
+
+// const [tasks, setTasks] = useState([]); // Single source of truth
+
+// return (
+//   // <TaskForm/>
+//   <>
+//     <TaskList tasks={tasks} />
+//     <TaskForm tasks={tasks} setTasks={setTasks} />
+//   </>
+// );
+
+// function addTask(text) {
+//   const newTask = { id: Date.now(), text, complete: false };
+//   setTasks([...tasks, newTask]);
+// }
+
+// function deleteTask(id) {
+//   setTasks(tasks.filter((task) => task.id !== id));
+// }
+
+// return (
+//   <div className="app">
+//     <TaskForm onAddTask={addTask} />
+//     <TaskList tasks={tasks} onDeleteTask={deleteTask} />
+//   </div>
+// );
+
+// return (
+//   <div>
+//     <a href="task-manager-react/index.html"></a>
+//   </div>
+// );
