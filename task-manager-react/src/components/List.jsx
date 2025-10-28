@@ -1,19 +1,19 @@
-import "./App.css";
+import { useState } from "react";
+import "./List.css";
 import TaskItem from "./TaskItem";
 
 let tasks = [];
 
 function List() {
-
   const [taskList, setTaskList] = useState(tasks);
 
   // Fix: Define handleChange function
   const handleChange = (e) => {
-    console.log(e.target.value); 
+    console.log(e.target.value);
   };
 
   const handleClick = () => {
-    setTaskList([...taskList, 'New Task $']); 
+    setTaskList([...taskList, "New Task $"]);
   };
 
   return (
@@ -22,9 +22,11 @@ function List() {
       <input
         type="text"
         placeholder="Enter your task here"
-        onChange={handleChange} 
+        onChange={handleChange}
       />
-      <button id="add-task-button" onClick={handleClick}>+ Add Task</button>
+      <button id="add-task-button" onClick={handleClick}>
+        + Add Task
+      </button>
 
       <ul className="task-list">
         {taskList.map((task, index) => (
@@ -34,7 +36,7 @@ function List() {
               <input type="checkbox" />
               <span className="checkmark"></span>
             </label>
-            <span className="page-li">{task}</span> 
+            <span className="page-li">{task}</span>
           </li>
         ))}
       </ul>
@@ -44,26 +46,23 @@ function List() {
 
 export default List;
 
-
 // import TaskItem from "./TaskItem";
 
-
-// let tasks = []; 
+// let tasks = [];
 
 // function List() {
-//   const tasks 
+//   const tasks
 //   const handleClick = () => {
 //     setTasks ([...tasks, 'New Task $' ])
 //   }
 //   return (
 //     onChange = handleChange
 //     < button id = "add-task-button" onClick = (handleClick) > + Add Task </button >
-      
 
 //     <ul className="task-list"
 //     <section className="page">
 //       <h1>Inbox</h1>
-        
+
 //         <input type="text" placeholder="Enter your task here" onChange={handleChange}/>
 //       <ul>
 //         <li>

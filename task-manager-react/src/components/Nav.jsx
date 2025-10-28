@@ -1,4 +1,7 @@
-import "./App.css";
+import "./Nav.css";
+import inboxIcon from "./assets/inbox_icon.png";
+import calendarIcon from "./assets/calendar_icon.png";
+import upcomingIcon from "./assets/upcoming_icon.png";
 
 function Nav() {
   return (
