@@ -1,7 +1,7 @@
 import "./Nav.css";
-import inboxIcon from "./assets/inbox_icon.png";
-import calendarIcon from "./assets/calendar_icon.png";
-import upcomingIcon from "./assets/upcoming_icon.png";
+import inboxIcon from "../assets/inbox_icon.png";
+import calendarIcon from "../assets/calendar_icon.png";
+import upcomingIcon from "../assets/upcoming_icon.png";
 
 function Nav() {
   return (
@@ -9,7 +9,7 @@ function Nav() {
       <ul>
         <li className="left-nav-hover">
           <img
-            src={require("./assets/inbox_icon.png")}
+            src={inboxIcon}
             alt="inbox icon"
             className="src"
           />
@@ -18,7 +18,7 @@ function Nav() {
         </li>
         <li className="left-nav-hover">
           <img
-            src={require("./assets/calendar_icon.png")}
+            src={calendarIcon}
             alt="calendar icon"
             className="src"
           />
@@ -27,7 +27,7 @@ function Nav() {
         </li>
         <li className="left-nav-hover">
           <img
-            src={require("./assets/upcoming_icon.png")}
+            src={upcomingIcon}
             alt="upcoming tasks that look like a year in calendar view, icon"
             className="src"
           />

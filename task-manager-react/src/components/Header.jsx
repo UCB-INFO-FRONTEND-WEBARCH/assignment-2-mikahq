@@ -1,4 +1,8 @@
 import "./Header.css";
+import menuIcon from "../assets/menu_icon.png";
+import searchIcon from "../assets/search_icon.png";
+import checkIcon from "../assets/check_icon.png";
+import TaskCounter from "./TaskCounter";
 
 function Header() {
   return (
@@ -6,14 +10,14 @@ function Header() {
       <div>
         <span className="menu-search">
           <img
-            src={require("./assets/menu_icon.png")}
+            src={menuIcon}
             alt="Menu icon, hamburger style"
             className="src"
           />
 
           <span className="search">
             <img
-              src={require("./assets/search_icon.png")}
+              src={searchIcon}
               alt="search icon that looks like a magnifying glass"
               className="src"
             />
@@ -24,13 +28,9 @@ function Header() {
       </div>
 
       <span className="check-icon">
-        <img
-          src={require("./assets/check_icon.png")}
-          alt="check icon"
-          className="src"
-        />
+        <img src={checkIcon} alt="check icon" className="src" />
 
-        <span> 30/5</span>
+        <TaskCounter />
       </span>
     </div>
   );

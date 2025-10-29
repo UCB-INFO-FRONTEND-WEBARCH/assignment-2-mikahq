@@ -1,6 +1,7 @@
 
 /* ========== MAIN CONTENT STYLES ========== */
 
+
 .page {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -22,6 +23,20 @@
   padding-left: 35px;
   margin-bottom: 12px;
 }
+/* ========== Add task ========== */
+.task {
+  display: block;
+  
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
 
 /* ========== CHECKBOX ========== */
 
@@ -29,7 +44,7 @@
 
 /* The container */
 .container {
-  display: block;
+   display: flex;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -38,7 +53,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  display: flex;
+ 
 }
 
 /* Hide the browser's default checkbox */

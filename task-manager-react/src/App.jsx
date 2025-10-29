@@ -2,20 +2,23 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
 import Nav from "./components/Nav.jsx";
-import List from "./components/List.jsx";
 import TaskList from "./components/TaskList";
 
 // import TaskItem from "./components/TaskItem";
 // import TaskForm from "./components/TaskForm";
 
 function App() {
+  // const tasks = ["Call Mom", "Buy the new issue of Scientific American", "Return the textbook to Josie",
+  //   "Buy the new album by Rake", "Buy a gift card for Dad"]; 
+  
   return (
     <>
       <Header />
       <main className="site-main">
         <Nav />
-        <List />
-        <TaskList />
+        <section className="page">
+          <TaskList />
+        </section>
       </main>
     </>
   );

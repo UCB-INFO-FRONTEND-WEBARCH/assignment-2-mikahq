@@ -1,13 +1,13 @@
-function TaskCounter() {
-  const [taskCount, setTaskCount] = useState(0);
+// import { useState } from "react";
+// import tasks from "App.jsx";
 
-  return (
-    <ul>
-      {setTasks.map((task) => (
-        <li> {task}</li>
-      ))}
-    </ul>
-  );
+function TaskCounter() {
+  const tasks = ["Call Mom", "Buy the new issue of Scientific American", "Return the textbook to Josie",
+    "Buy the new album by Rake", "Buy a gift card for Dad"];
+
+  const taskCounter = tasks.length;
+
+  return <span>{taskCounter}</span>;
 }
 
-export default TaskCounter
+export default TaskCounter;

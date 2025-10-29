@@ -19,6 +19,27 @@ function TaskForm() {
 
 export default TaskForm;
 
+// // const addTask = (taskText) => {
+//     // Add new task to state
+//   };
+
+//   const toggleTask = (id) => {
+//     // Toggle task completion
+//   };
+
+//   const deleteTask = (id) => {
+//     // Remove task from state
+//   };
+
+//   return (
+//     <div className="app">
+//       <TaskForm onAddTask={addTask} />
+//       <TaskCounter tasks={tasks} />
+//       <TaskList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask} />
+//     </div>
+//   );
+// }
+
 // - Its own local state for the input value (controlled component)
 // - A form with onSubmit handler
 // - An input with value and onChange props

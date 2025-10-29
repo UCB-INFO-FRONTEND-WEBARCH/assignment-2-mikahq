@@ -1,117 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Task Manager</title>
-    <!-- Link your CSS file and other references here -->
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- header -->
-    <div class="site-header">
-      <div>
-        <span class="menu-search">
-          <img
-            src="assets/menu_icon.png"
-            alt="Menu icon, hamburger style"
-            class="src"
-          />
-
-          <span class="search">
-            <img
-              src="assets/search_icon.png"
-              alt="search icon that looks like a magnifying glass"
-              class="src"
-            />
-
-            <input type="search" id="search" placeholder="Quick Find" />
-          </span>
-        </span>
-      </div>
-      <!-- task completion, header -->
-      <span class="check-icon">
-        <img src="assets/check_icon.png" alt="check icon" class="src" />
-        <span> 30/5</span>
-      </span>
-    </div>
-
-    <!-- put everything in site main and then put aside -->
-    <main class="site-main">
-      <!-- left nav -->
-       
-      <aside class="left-nav">
-        <ul>
-          <li class="left-nav-hover">
-            <img src="assets/inbox_icon.png" alt="inbox icon" /> Inbox
-            <span class="count"> 5</span>
-          </li>
-          <li class="left-nav-hover">
-            <img src="assets/calendar_icon.png" alt="calendar icon" /> Today
-            <span class="count"> 5 </span>
-          </li>
-          <li class="left-nav-hover">
-            <img
-              src="assets/upcoming_icon.png"
-              alt="upcoming tasks that look like a year in calendar view, icon"
-            />
-            Upcoming
-          </li>
-        </ul>
-      </aside>
-
-      <!-- main content -->
-      <section class="page">
-        <h1>Inbox</h1>
-        <ul>
-          <!-- list start -->
-          <li>
-            <label class="container">
-              Call Mom
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-
-            <span class="page-li"></span>
-          </li>
-
-          <li>
-            <label class="container">
-              Buy the new issue of Scientific American
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <span class="page-li"></span>
-          </li>
-
-          <li>
-            <label class="container">
-              Return the textbook to Josie
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <span class="page-li"></span>
-          </li>
-
-          <li>
-            <label class="container">
-              Buy the new album by Rake <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <span class="page-li"></span>
-          </li>
-
-          <li>
-            <label class="container">
-              Buy a gift card for Dad
-              <input type="checkbox" />
-
-              <span class="checkmark"></span>
-            </label>
-            <span class="page-li"></span>
-          </li>
-        </ul>
-      </div>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
+import { useState } from "react";
+
 function TaskItem() {
   const [tasks, setTasks] = useState([]);
-  setTasks([...tasks, newTask]);
 
   function addTask(name) {
     const newTask = { id: Date.now(), name, quantity: 1, completed: false };
@@ -17,7 +18,7 @@ function TaskItem() {
     ); // Map to new array with updates
   }
 
-  return <li> {new Date.now()} Item</li>;
+  return <li> {Date.now()} Item</li>;
 }
 
 // - `id` - Unique identifier (Hint: `Date.now()` or `crypto.randomUUID()`)
