@@ -3,20 +3,31 @@ import { useState } from "react";
 function TaskItem() {
   const [tasks, setTasks] = useState([]);
 
-  function addTask(name) {
-    const newTask = { id: Date.now(), name, quantity: 1, completed: false };
-    setTasks([...tasks, newTask]); // Spread existing, add new
+  function onDelete(id) {
+    setTasks(tasks.filter((task) => task.id !== id));
   }
 
-  function removeTask(id) {
-    setTasks(tasks.filter((task) => task.id !== id)); // Filter out
-  }
+  const toggleTask = (id) => {
+    setTaskList(
+      tasks.map((task) => {
+        task, ud === id ? { ...task, completed: !task.completed } : task;
+      })
+    );
+  };
 
-  function updateTask(id, newTask) {
-    setTasks(
-      tasks.map((task) => (tasks.id === id ? { ...task, task: newTask } : task))
-    ); // Map to new array with updates
-  }
+  tasks.map((task, index) => (
+    <li id tasks={index} className="task-item">
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => toggleTask(task.id)}
+        id={`task-${index}`}
+      />
+      <label htmlFor={`task-${index}`} className={`task-label-completed`}>
+        {task.text}
+      </label>
+    </li>
+  ));
 
   return <li> {Date.now()} Item</li>;
 }

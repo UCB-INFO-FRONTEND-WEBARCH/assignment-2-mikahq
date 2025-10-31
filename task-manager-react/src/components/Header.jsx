@@ -2,7 +2,7 @@ import "./Header.css";
 import menuIcon from "../assets/menu_icon.png";
 import searchIcon from "../assets/search_icon.png";
 import checkIcon from "../assets/check_icon.png";
-import TaskCounter from "./TaskCounter";
+import TaskCounter from "./TaskCounter.jsx";
 
 function Header() {
   return (
@@ -15,6 +15,7 @@ function Header() {
             className="src"
           />
 
+          
           <span className="search">
             <img
               src={searchIcon}

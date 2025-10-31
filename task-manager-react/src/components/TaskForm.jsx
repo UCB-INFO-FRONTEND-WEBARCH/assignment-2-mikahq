@@ -1,20 +1,32 @@
 function TaskForm() {
   e.preventDefault();
 
-  function addTask(text) {
-    const newTask = { id: Date.now(), text, complete: false };
-    setTasks([...tasks, newTask]);
+  const checkbox = document.querySelector("#id-checkbox");
+
+  checkbox.addEventListener("click", checkboxClick);
+
+  function checkboxClick(event) {
+    const warn = "preventDefault() won't let you check this!\n";
+    document.getElementById("output-box").innerText += warn;
+    event.preventDefault();
   }
 
-  function deleteTask(id) {
-    setTasks(tasks.filter((task) => task.id !== task));
+  function onAddTask(taskText) {
+    // Add new task to state
+    <div className="task">
+        <input
+          type="text"
+          placeholder="Enter your task here"
+          value={inputValue}
+          onChange={handleChange}
+        />
+        <button id="add-task-button" onClick={handleClick}>
+          + Add Task
+      </button>
+      </div>
   }
 
-  return (
-    <div className="container">
-      <p> Item</p>
-    </div>
-  );
+  
 }
 
 export default TaskForm;
@@ -39,6 +51,10 @@ export default TaskForm;
 //     </div>
 //   );
 // }
+
+// **TaskForm Component**
+
+// This component needs:
 
 // - Its own local state for the input value (controlled component)
 // - A form with onSubmit handler
