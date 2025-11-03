@@ -10,11 +10,11 @@ function TaskCounter({ tasks = [], allTasks = [], filter = "all" }) {
   let message = "";
   
   if (filter === "all") {
-    message = `${totalCount} / ${completedCount}`;
+    message = `${totalCount} `;
   } else if (filter === "active") {
-    message = `${displayedCount} / ${completedCount}`;
+    message = `${displayedCount}`;
   } else if (filter === "completed") {
-    message = `${displayedCount} / ${completedCount}`;
+    message = `${displayedCount}`;
   }
 
   return (

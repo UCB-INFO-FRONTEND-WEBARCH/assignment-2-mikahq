@@ -27,6 +27,15 @@ body {
   border-radius: 4px;
 }
 
+/* ========== ACTIVE BUTTON ========== */
+
+
+button.active {
+  background-color: #dc4c3e; 
+  border-color: gray;
+  color: white;
+ 
+}
 
 /* ========== RESPONSIVE STYLES ========== */
 
