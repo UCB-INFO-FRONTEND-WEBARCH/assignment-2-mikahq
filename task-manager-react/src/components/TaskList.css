@@ -109,6 +109,13 @@
   color: #7e7d79;
 }
 
+.empty-message {
+  padding: 35px;
+  color: #7e7d79;
+  text-align: left;
+  
+}
+
 /* ========== RESPONSIVE STYLES ========== */
 
 @media (max-width: 480px) {
