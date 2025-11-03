@@ -4,7 +4,8 @@ import searchIcon from "../assets/search_icon.png";
 import checkIcon from "../assets/check_icon.png";
 import TaskCounter from "./TaskCounter.jsx";
 
-function Header() {
+function Header({ tasks = [], allTasks = [], filter = "all" }) {
+
   return (
     <div className="site-header">
       <div>
@@ -15,7 +16,7 @@ function Header() {
             className="src"
           />
 
-          
+
           <span className="search">
             <img
               src={searchIcon}
@@ -28,10 +29,11 @@ function Header() {
         </span>
       </div>
 
+      
+
       <span className="check-icon">
         <img src={checkIcon} alt="check icon" className="src" />
-
-        <TaskCounter />
+        <TaskCounter tasks={tasks} allTasks={allTasks} filter={filter} />
       </span>
     </div>
   );

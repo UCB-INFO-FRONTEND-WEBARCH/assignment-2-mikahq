@@ -51,7 +51,7 @@
   user-select: none;
 }
 
-/* Hide the browser's default checkbox */
+
 .container input {
   position: absolute;
   opacity: 0;
@@ -60,16 +60,16 @@
   width: 0;
 }
 
-/* Create a custom checkbox */
+
 .checkmark {
   position: absolute;
   top: 0;
   left: 0;
   height: 15px;
   width: 15px;
-  border-radius: 50%;
+  border-radius: 60%;
   border-color: #7e7d79;
-  border: solid;
+  border: solid 1px;
   display: flex;
 }
 
@@ -94,6 +94,14 @@
   height: 11px;
   border-radius: 100%;
   background: #bc0fd6;
+}
+
+.task-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 35px;
+  margin-right: 35px;
 }
 
 .task--label-completed {

@@ -1,27 +1,27 @@
-// import { useState } from "react";
-// import tasks from "App.jsx";
 
-// **TaskCounter Component**
 
-// This component calculates and displays statistics.
+function TaskCounter({ tasks = [], allTasks = [], filter = "all" }) {
 
-// Think about:
+  const displayedCount = tasks.length;
+  const totalCount = allTasks.length;
+  const completedCount = allTasks.filter(task => task.completed).length;
 
-// - How to count total tasks (array length)
-// - How to count completed tasks (use `.filter()`)
-// - How to calculate active tasks (total - completed)
 
-// Display these three numbers in your UI.
-
-function TaskCounter() {
-  const tasks = ["Call Mom", "Buy the new issue of Scientific American", "Return the textbook to Josie",
-    "Buy the new album by Rake", "Buy a gift card for Dad"];
-
-  // const [filter, setFilter] = useState("all");
-
+  let message = "";
   
+  if (filter === "all") {
+    message = `${totalCount} / ${completedCount}`;
+  } else if (filter === "active") {
+    message = `${displayedCount} / ${completedCount}`;
+  } else if (filter === "completed") {
+    message = `${displayedCount} / ${completedCount}`;
+  }
 
-  return <span>{taskCounter}</span>;
+  return (
+    <div className="task-counter">
+      <span>{message}</span>
+    </div>
+  );
 }
 
 export default TaskCounter;

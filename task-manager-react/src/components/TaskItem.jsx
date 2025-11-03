@@ -1,39 +1,30 @@
-import { useState } from "react";
-
-function TaskItem() {
-  const [tasks, setTasks] = useState([]);
-
-  function onDelete(id) {
-    setTasks(tasks.filter((task) => task.id !== id));
-  }
-
-  const toggleTask = (id) => {
-    setTaskList(
-      tasks.map((task) => {
-        task, ud === id ? { ...task, completed: !task.completed } : task;
-      })
-    );
+function TaskItem({ task, onToggle, onDelete }) {
+  const handleToggle = () => {
+    onToggle(task.id);
   };
 
-  tasks.map((task, index) => (
-    <li id tasks={index} className="task-item">
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => toggleTask(task.id)}
-        id={`task-${index}`}
-      />
-      <label htmlFor={`task-${index}`} className={`task-label-completed`}>
-        {task.text}
+  const handleDelete = () => {
+    onDelete(task.id);
+  };
+
+  return (
+    <li className={task.completed ? "task-item task-item-completed" : "task-item"}>
+      <label className="container">
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={handleToggle}
+        />
+        <span className="checkmark"></span>
+        <span className={task.completed ? "task--label-completed" : "task-text"}>
+          {task.text}
+        </span>
       </label>
+      <button onClick={handleDelete} className="delete-btn">
+        Delete
+      </button>
     </li>
-  ));
-
-  return <li> {Date.now()} Item</li>;
+  );
 }
-
-// - `id` - Unique identifier (Hint: `Date.now()` or `crypto.randomUUID()`)
-// - `text` - The task description (string)
-// - `completed` - Boolean for completion status
 
 export default TaskItem;

@@ -1,32 +1,39 @@
-function TaskForm() {
-  e.preventDefault();
+import { useState } from "react";
 
-  const checkbox = document.querySelector("#id-checkbox");
+function TaskForm({ onAddTask }) {
+  const [inputValue, setInputValue] = useState("");
 
-  checkbox.addEventListener("click", checkboxClick);
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
-  function checkboxClick(event) {
-    const warn = "preventDefault() won't let you check this!\n";
-    document.getElementById("output-box").innerText += warn;
-    event.preventDefault();
-  }
+  const handleClick = () => {
+    if (inputValue.trim()) {
+      onAddTask(inputValue); 
+      setInputValue(""); 
+    }
+  };
 
-  function onAddTask(taskText) {
-    // Add new task to state
-    <div className="task">
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    handleClick();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="task">
         <input
           type="text"
-          placeholder="Enter your task here"
+          placeholder="Enter task"
           value={inputValue}
           onChange={handleChange}
         />
-        <button id="add-task-button" onClick={handleClick}>
+        <button type="submit" id="add-task-button">
           + Add Task
-      </button>
+        </button>
       </div>
-  }
-
-  
+    </form>
+  );
 }
 
 export default TaskForm;

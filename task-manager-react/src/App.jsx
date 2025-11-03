@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header.jsx";
 import Nav from "./components/Nav.jsx";
@@ -6,49 +6,68 @@ import TaskForm from "./components/TaskForm.jsx";
 import TaskList from "./components/TaskList.jsx";
 
 function App() {
-  // const tasks = ["Call Mom", "Buy the new issue of Scientific American", "Return the textbook to Josie",
-  //   "Buy the new album by Rake", "Buy a gift card for Dad"];
-
-  const [tasks, setTasks] = useState([]); // Single source of truth
+  const [tasks, setTasks] = useState([]); 
   const [filter, setFilter] = useState("all");
 
-  // task object
-  function addTask(text) {
-    const newTask = { id: Date.now(), text, complete: false };
-    setTasks([...tasks, newTask]);
-  }
 
-  function deleteTask(id) {
-    setTasks(tasks.filter((task) => task.id !== task));
-  }
+  const addTask = (text) => {
+    const newTask = { id: Date.now(), text, completed: false };
+    setTasks([...tasks, newTask]); 
+  };
 
-  function updateTask(id, newTask) {
+  const toggleTask = (id) => {
     setTasks(
-      tasks.map((task) => (tasks.id === id ? { ...task, task: newTask } : task))
-    ); // Map to new array with updates
-  }
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
 
-  // filtering
-  const taskList = getFilteredTasks();
-  const taskCounter = taskList.length;
-  function getFilteredTasks() {
-    if (filter === "completed") {
-      return taskList.filter((task) => task.completed);
-    }
-    return tasks;
-  }
+  
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "active") return !task.completed;
+    if (filter === "completed") return task.completed;
+    return true; // 'all'
+  });
 
   return (
     <>
-      <Header />
+      <Header tasks={filteredTasks} allTasks={tasks} filter={filter} />
       <main className="site-main">
         <Nav />
         <section className="page">
           <TaskForm onAddTask={addTask} />
-          <TaskCounter tasks={tasks} />
-          <TaskList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask} />
-          <TaskList />
-          <TaskForm />
+
+          <div className="filter-buttons">
+            <button
+              className={filter === "all" ? "active" : ""}
+              onClick={() => setFilter("all")}
+            >
+              All
+            </button>
+            <button
+              className={filter === "active" ? "active" : ""}
+              onClick={() => setFilter("active")}
+            >
+              Active
+            </button>
+            <button
+              className={filter === "completed" ? "active" : ""}
+              onClick={() => setFilter("completed")}
+            >
+              Completed
+            </button>
+          </div>
+
+          <TaskList
+            tasks={filteredTasks}
+            onToggle={toggleTask}
+            onDelete={deleteTask}
+          />
         </section>
       </main>
     </>
